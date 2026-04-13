@@ -1,3 +1,5 @@
+/** @format */
+
 import type { ComputationFn, LinkedSignalNode } from '@angular/core/primitives/signals';
 import {
 	PartialAfterRenderEffectSequence,
@@ -43,10 +45,12 @@ export const withDebugging = (afterRenderRef: PartialAfterRenderEffectSequence) 
 			patchUserFn(node, afterRenderRef);
 		}
 	}
-
 };
 
-const patchUserFn = (node: PartialAfterRenderPhaseEffectNode, sequence: PartialAfterRenderEffectSequence) => {
+const patchUserFn = (
+	node: PartialAfterRenderPhaseEffectNode,
+	sequence: PartialAfterRenderEffectSequence
+) => {
 	const originalFn = node.userFn;
 
 	const allProducerValues = new Map<

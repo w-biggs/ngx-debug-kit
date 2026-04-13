@@ -1,15 +1,13 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "rootDir": "../../",
-    "outDir": "../../dist/out-tsc",
-    "declaration": true,
-    "declarationMap": true,
-    "inlineSources": true,
-    "types": []
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "../../",
+		"outDir": "../../dist/out-tsc",
+		"declaration": true,
+		"declarationMap": true,
+		"inlineSources": true,
+		"types": []
+	},
+	"include": ["src/**/*"],
+	"exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }

@@ -1,3 +1,5 @@
+/** @format */
+
 import nx from '@nx/eslint-plugin';
 
 export default [
@@ -14,10 +16,7 @@ export default [
 				'error',
 				{
 					enforceBuildableLibDependency: true,
-					allow: [
-						'^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$',
-						'^angular-src/.*'
-					],
+					allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$', '^angular-src/.*'],
 					depConstraints: [
 						{
 							sourceTag: '*',
