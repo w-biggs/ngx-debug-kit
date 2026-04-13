@@ -1,5 +1,6 @@
 {
 	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"analytics": false,
 	"namedInputs": {
 		"default": ["{projectRoot}/**/*", "sharedGlobals"],
 		"production": [
@@ -7,37 +8,8 @@
 			"!{projectRoot}/.eslintrc.json",
 			"!{projectRoot}/eslint.config.mjs"
 		],
-		"sharedGlobals": []
+		"sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
 	},
-	"plugins": [
-		{
-			"plugin": "@nx/js/typescript",
-			"options": {
-				"typecheck": {
-					"targetName": "typecheck"
-				},
-				"build": {
-					"targetName": "build",
-					"configName": "tsconfig.lib.json",
-					"buildDepsName": "build-deps",
-					"watchDepsName": "watch-deps"
-				}
-			}
-		},
-		{
-			"plugin": "@nx/playwright/plugin",
-			"options": {
-				"targetName": "e2e"
-			}
-		},
-		{
-			"plugin": "@nx/eslint/plugin",
-			"options": {
-				"targetName": "lint"
-			}
-		}
-	],
-	"analytics": true,
 	"targetDefaults": {
 		"@angular/build:application": {
 			"cache": true,
@@ -67,6 +39,20 @@
 			"inputs": ["default", "^production"]
 		}
 	},
+	"plugins": [
+		{
+			"plugin": "@nx/playwright/plugin",
+			"options": {
+				"targetName": "e2e"
+			}
+		},
+		{
+			"plugin": "@nx/eslint/plugin",
+			"options": {
+				"targetName": "lint"
+			}
+		}
+	],
 	"generators": {
 		"@nx/angular:application": {
 			"e2eTestRunner": "playwright",
