@@ -1,6 +1,10 @@
-import  { AfterRenderEffectSequence, AfterRenderPhaseEffectNode } from 'angular-src/core/src/render3/reactivity/after_render_effect';
-import { LinkedSignalNode } from 'angular-src/core/primitives/signals';
-import { ComputationFn } from '@angular/core/primitives/signals';
+/** @format */
+
+import type { ComputationFn, LinkedSignalNode } from '@angular/core/primitives/signals';
+import {
+	PartialAfterRenderEffectSequence,
+	PartialAfterRenderPhaseEffectNode
+} from './types/angular-internal/after-render-effect';
 
 interface ProducerSummary {
 	value: unknown;
@@ -10,8 +14,8 @@ interface ProducerSummary {
 	producer: LinkedSignalNode<unknown, unknown>;
 }
 
-const getProducers = (effectNode: AfterRenderPhaseEffectNode) => {
-	// Walk the producers linked list
+const getProducers = (effectNode: PartialAfterRenderPhaseEffectNode) => {
+	// Walk the linked list of producers
 	let edge = effectNode.producers;
 
 	const effectProducers: ProducerSummary[] = [];
@@ -31,25 +35,22 @@ const getProducers = (effectNode: AfterRenderPhaseEffectNode) => {
 	return effectProducers;
 };
 
-export const withDebugging = (afterRenderRef: AfterRenderEffectSequence) => {
+export const withDebugging = (afterRenderRef: PartialAfterRenderEffectSequence) => {
 	// Get the node (whichever way you're accessing it)
 	// we only care about mixedreadwrite
-	const nodes: [
-		AfterRenderPhaseEffectNode | undefined,
-		AfterRenderPhaseEffectNode | undefined,
-		AfterRenderPhaseEffectNode | undefined,
-		AfterRenderPhaseEffectNode | undefined
-	] = (afterRenderRef as any).nodes;
+	const nodes = afterRenderRef.nodes;
 
 	for (const node of nodes) {
 		if (node) {
 			patchUserFn(node, afterRenderRef);
 		}
 	}
-
 };
 
-const patchUserFn = (node: AfterRenderPhaseEffectNode, sequence: AfterRenderEffectSequence) => {
+const patchUserFn = (
+	node: PartialAfterRenderPhaseEffectNode,
+	sequence: PartialAfterRenderEffectSequence
+) => {
 	const originalFn = node.userFn;
 
 	const allProducerValues = new Map<

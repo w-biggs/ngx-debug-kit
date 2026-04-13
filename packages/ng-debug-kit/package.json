@@ -1,9 +1,8 @@
 {
-  "name": "@w-biggs/ngx-debug-kit",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^21.2.0",
-    "@angular/core": "^21.2.0"
-  },
-  "sideEffects": false
+	"name": "@w-biggs/ngx-debug-kit",
+	"version": "0.0.1",
+	"peerDependencies": {
+		"@angular/core": "^21.2.0"
+	},
+	"sideEffects": false
 }

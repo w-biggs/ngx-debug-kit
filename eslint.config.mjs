@@ -1,3 +1,5 @@
+/** @format */
+
 import nx from '@nx/eslint-plugin';
 
 export default [
@@ -5,7 +7,7 @@ export default [
 	...nx.configs['flat/typescript'],
 	...nx.configs['flat/javascript'],
 	{
-		ignores: ['**/dist', '**/out-tsc', '**/test-output', 'vendor/']
+		ignores: ['**/dist', '**/out-tsc', '**/test-output']
 	},
 	{
 		files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -14,10 +16,7 @@ export default [
 				'error',
 				{
 					enforceBuildableLibDependency: true,
-					allow: [
-						'^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$',
-						'^angular-src/.*'
-					],
+					allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$', '^angular-src/.*'],
 					depConstraints: [
 						{
 							sourceTag: '*',

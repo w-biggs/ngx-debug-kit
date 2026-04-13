@@ -1,25 +1,18 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022", "dom"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": ["@org/source"],
-    "paths": {
-      "@w-biggs/ngx-debug-kit": ["packages/ng-debug-tools/src/index.ts"],
-      "angular-src/*": ["vendor/angular/packages/*"]
-    }
-  }
+	"compilerOptions": {
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"target": "es2022",
+		"module": "esnext",
+		"lib": ["es2022", "dom"],
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"paths": {
+			"@w-biggs/ngx-debug-kit": ["./packages/ng-debug-kit/src/index.ts"]
+		}
+	}
 }
