@@ -11,31 +11,31 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/js/typescript",
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
-      }
-    },
+		"plugin": "@nx/js/typescript",
+		"options": {
+			"typecheck": {
+				"targetName": "typecheck"
+			},
+			"build": {
+				"targetName": "build",
+				"configName": "tsconfig.lib.json",
+				"buildDepsName": "build-deps",
+				"watchDepsName": "watch-deps"
+			}
+		}
+	},
     {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
+		"plugin": "@nx/playwright/plugin",
+		"options": {
+			"targetName": "e2e"
+		}
+	},
     {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
+		"plugin": "@nx/eslint/plugin",
+		"options": {
+			"targetName": "lint"
+		}
+	}
   ],
   "analytics": true,
   "targetDefaults": {

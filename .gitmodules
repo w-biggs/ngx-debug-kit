@@ -1,5 +1,0 @@
-[submodule "vendor/angular"]
-    path = vendor/angular
-    url = https://github.com/angular/angular.git
-    shallow = true
-    branch = v21.2.8

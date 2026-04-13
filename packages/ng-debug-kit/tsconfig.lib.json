@@ -9,8 +9,7 @@
     "types": []
   },
   "include": [
-    "src/**/*",
-    "../../vendor/angular/packages/core/src/render3/**/*"
+    "src/**/*"
   ],
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }
